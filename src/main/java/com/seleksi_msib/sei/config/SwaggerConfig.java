@@ -12,8 +12,8 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Proyek API")
+                        .title("Proyek REST API")
                         .version("1.0.0")
-                        .description("API untuk manajemen proyek"));
+                        .description("REST API untuk manajemen proyek dan lokasinya. \n Create by Muhammad Thoriq Ramadhan"));
     }
 }
