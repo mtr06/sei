@@ -1,0 +1,10 @@
+com\seleksi_msib\sei\controller\LokasiController.class
+com\seleksi_msib\sei\repository\LokasiRepository.class
+com\seleksi_msib\sei\SeiApplication.class
+com\seleksi_msib\sei\service\ProyekService.class
+com\seleksi_msib\sei\controller\ProyekController.class
+com\seleksi_msib\sei\repository\ProyekRepository.class
+com\seleksi_msib\sei\model\Proyek.class
+com\seleksi_msib\sei\response\ApiResponse.class
+com\seleksi_msib\sei\service\LokasiService.class
+com\seleksi_msib\sei\model\Lokasi.class

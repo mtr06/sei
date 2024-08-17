@@ -18,12 +18,17 @@ import com.seleksi_msib.sei.model.Lokasi;
 import com.seleksi_msib.sei.response.ApiResponse;
 import com.seleksi_msib.sei.service.LokasiService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/lokasi")
+@Tag(name = "Lokasi", description = "Operasi yang berkaitan dengan Lokasi")
 public class LokasiController {
     @Autowired
     private LokasiService lokasiService;
 
+    @Operation(summary = "Menambahkan data lokasi")
     @PostMapping
     public ResponseEntity<ApiResponse> createLokasi(@RequestBody Lokasi lokasi) {
         try{
@@ -36,12 +41,15 @@ public class LokasiController {
         }
     }
 
+    @Operation(summary = "Menampilkan semua data Lokasi dalam bentuk list")
     @GetMapping
     public ResponseEntity<List<Lokasi>> getAllLokasi() {
         List<Lokasi> lokasiList = lokasiService.getAllLokasi();
         return ResponseEntity.ok(lokasiList);
     }
-
+    
+    
+    @Operation(summary = "Update atau edit data lokasi")
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse> updateLokasi(@PathVariable Long id, @RequestBody Lokasi lokasi) {
         ApiResponse response = new ApiResponse("","");
@@ -62,7 +70,8 @@ public class LokasiController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
     }
-
+    
+    @Operation(summary = "Menghapus data lokasi")
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse> deleteLokasi(@PathVariable Long id) {
         boolean isDeleted = lokasiService.deleteLokasi(id);
